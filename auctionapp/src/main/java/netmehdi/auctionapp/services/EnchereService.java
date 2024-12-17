@@ -1,7 +1,7 @@
 package netmehdi.auctionapp.services;
 
+import netmehdi.auctionapp.DTO.EnchereDetailsDTO;
 import netmehdi.auctionapp.entities.Enchere;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,7 +10,8 @@ import java.util.Optional;
 public interface EnchereService {
 
     List<Enchere> getAllEnchere();
-    Optional<Enchere> findById(Long id) ;
+     List<Object[]> findById(Long id);
+    // EnchereDetailsDTO findById(Long id) ;
     Enchere save(Enchere enchere);
     void deleteById(Long id);
     void closeEnchere(Long enchereId);

@@ -1,11 +1,11 @@
 package netmehdi.auctionapp.services;
 
 
+import netmehdi.auctionapp.DTO.EnchereDetailsDTO;
 import netmehdi.auctionapp.entities.Enchere;
 import netmehdi.auctionapp.entities.Participation;
 import netmehdi.auctionapp.repositories.EnchereRepository;
 import netmehdi.auctionapp.repositories.ParticipationRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -31,9 +31,12 @@ public class EnchereServiceImp implements EnchereService{
     }
 
     @Override
-    public Optional<Enchere> findById(Long id) {
-        return enchereRepository.findById(id);
+    public List<Object[]> findById(Long id) {
+        return (List<Object[]>) enchereRepository.EnchereById(id);
     }
+//    public EnchereDetailsDTO findById(Long id) {
+//        return enchereRepository.findEnchereById(id);
+//    }
 
     @Override
     public Enchere save(Enchere enchere) {
@@ -42,7 +45,7 @@ public class EnchereServiceImp implements EnchereService{
 
     @Override
     public void deleteById(Long id) {
-
+    enchereRepository.deleteById(id);
     }
 
     @Override
